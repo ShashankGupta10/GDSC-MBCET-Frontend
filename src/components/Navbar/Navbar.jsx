@@ -16,6 +16,7 @@ import AdbIcon from '@mui/icons-material/Adb';
 import SearchIcon from '@mui/icons-material/Search';
 import InputBase from '@mui/material/InputBase';
 
+
 const pages = ['Products', 'BID'];
 const settings = ['Profile', 'Dashboard', 'Logout'];
 
@@ -83,9 +84,11 @@ export default function Navbar() {
       },
     },
   }));
-
+  const StyledAppBar = styled(AppBar)`
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  `;
   return (
-    <AppBar position="static" sx={{backgroundColor: "#006494"}}>
+    <AppBar position="static" sx={{backgroundColor: "#3a7af0"}}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />

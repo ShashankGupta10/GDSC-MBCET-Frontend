@@ -1,0 +1,129 @@
+import React, { useState } from 'react'
+import profile from '../../assets/profile.png';
+import Box from '@mui/material/Box';
+import TextField from '@mui/material/TextField';
+import IconButton from '@mui/material/IconButton';
+import OutlinedInput from '@mui/material/OutlinedInput';
+import InputLabel from '@mui/material/InputLabel';
+import InputAdornment from '@mui/material/InputAdornment';
+import FormControl from '@mui/material/FormControl';
+import Visibility from '@mui/icons-material/Visibility';
+import VisibilityOff from '@mui/icons-material/VisibilityOff';
+import { useNavigate } from 'react-router-dom';
+
+
+export default function Login_Consumer() {
+  const navigate = useNavigate();
+
+  const [showPassword, setShowPassword] = useState(false);
+
+  const handleClickShowPassword = () => setShowPassword((show) => !show);
+
+  const handleMouseDownPassword = (event) => {
+    event.preventDefault();
+  };
+  return (
+    <div style={{
+      textAlign: 'center',
+      justifyContent: 'center',
+      display: 'flex',
+      paddingTop: '90px',
+      paddingBottom: '90px',
+      backgroundColor: '#e1e3eb'
+    }}>
+      <div style={{
+        display: 'flex',
+        justifyContent: 'center',
+        height: '550px',
+        width: '35%',
+        boxShadow: '11px 12px 13px 12px rgb(207, 207, 207)',
+        paddingTop: '30px',
+        borderRadius: '60px',
+        backgroundColor: 'white'
+      }} >
+        <div>
+          <div style={{
+            paddingTop: '20px',
+            justifyContent: 'center',
+            display: 'flex'
+          }}>
+            <div style={{
+              backgroundColor: 'rgb(223, 221, 221)',
+              borderRadius: '150px',
+              alignItems: 'center',
+              display: 'flex',
+              justifyContent: 'center',
+              height: '115px',
+              width: '115px'
+            }}>
+              <img src={profile} alt="profile" style={{
+
+                backgroundColor: 'rgb(223, 221, 221)',
+                borderRadius: '150px',
+                alignItems: 'center',
+                display: 'flex',
+                justifyContent: 'center',
+                height: '115px',
+                width: '115px',
+              }} />
+            </div>
+          </div>
+          <div>
+            <h1 style={{ marginBottom: '20px' }}>Login Page</h1>
+            <Box
+              component="form"
+              sx={{
+                '& > :not(style)': { m: 2, width: '40ch' },
+              }}
+              noValidate
+              autoComplete="off"
+            >
+              <TextField id="outlined-basic" label="Username" variant="outlined" />
+            </Box>
+            <div className="second-input">
+              <FormControl sx={{ m: 0, width: '40ch', marginBottom: '25px' }} variant="outlined">
+                <InputLabel htmlFor="outlined-adornment-password">Password</InputLabel>
+                <OutlinedInput
+                  id="outlined-adornment-password"
+                  type={showPassword ? 'text' : 'password'}
+                  endAdornment={
+                    <InputAdornment position="end">
+                      <IconButton
+                        aria-label="toggle password visibility"
+                        onClick={handleClickShowPassword}
+                        onMouseDown={handleMouseDownPassword}
+                        edge="end"
+                      >
+                        {showPassword ? <VisibilityOff /> : <Visibility />}
+                      </IconButton>
+                    </InputAdornment>
+                  }
+                  label="Password"
+                />
+              </FormControl>
+            </div>
+            <div>
+              <button onClick={()=> navigate("/home/provider")} style={{
+
+                width: '300px',
+                height: '50px',
+                borderRadius: '60px',
+                backgroundColor: '#006494',
+                color: 'white',
+                fontSize: '25px',
+                border: 'none',
+              }}>Login</button>
+            </div>
+            <p style={{
+              marginTop: '8px',
+              fontSize: "15px",
+              fontWeight: "400"
+            }}>
+              <a href="#">Forgot password ?</a> Or <a href="#">Sign Up</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
