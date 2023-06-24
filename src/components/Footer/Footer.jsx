@@ -8,7 +8,7 @@ import { Box } from "@mui/material";
 
 export default function Footer() {
   return (
-    <div style={{ width: "1920px", background: "white", padding: "25px" }}>
+    <div style={{ width: "100%", background: "white", padding: "25px" }}>
       <Container maxWidth="lg">
         <Grid container spacing={5}>
           <Grid item xs={12} sm={4}>
