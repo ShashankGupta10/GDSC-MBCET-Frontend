@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
+import { useEffect } from "react";
+import axios from "axios";
 import Box from "@mui/material/Box";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
@@ -16,7 +18,31 @@ const data = {
   Experience: 8,
   Points: 10,
 };
+// const [gotdata, setGotdata] = useState(null)
+//   const [loading, setLoading] = useState(true)
+//     useEffect(() => {
+//       const token = localStorage.getItem("token");
+//       console.log(token);
+//       const headers = { authorization: `Bearer ${token}` };
+//       console.log(headers);
+//       axios
+//         .get("https://gdsc-mbcet-backend.onrender.com/api/v1/dashboard/provider", {
+//           headers,
+//         })
+//         .then((response) => {
+//           console.log(response.data)
+//           setLoading(false)
+//           setGotdata(response.data)
+//         })
+//         .catch((err) => {
+//           console.log(err);
+//           // Handle the error here (e.g., display an error message)
+//         });
+//     }, []);
 
+//     if(loading){
+//       return <></>
+//     }
 const card = (
   <React.Fragment>
     <CardContent>
@@ -162,27 +188,6 @@ const card = (
           <p>Points</p>
         </div>
       </div>
-      <div>
-        <div>
-          <Button
-            sx={{
-              marginTop: "80px",
-              width: "200px",
-              gap: "50px",
-
-              marginLeft: "700px",
-              border: "1px solid #1B98E0",
-              "&:hover": {
-                backgroundColor: "#006494",
-                color: "lightgray",
-              },
-            }}
-          >
-            PLACE A BID
-          </Button>
-        </div>
-        <script></script>
-      </div>
     </CardContent>
   </React.Fragment>
 );
@@ -198,7 +203,7 @@ const pastjobs = (
         justifyContent: "center",
         alignItems: "center",
         margin: "10px 10px 10px 10px",
-        width: "auto",
+        width: "1920px",
         gap: "50px",
       }}
     >

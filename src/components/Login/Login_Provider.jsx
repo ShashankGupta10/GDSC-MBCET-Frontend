@@ -1,27 +1,66 @@
-import React, { useState } from 'react'
-import profile from '../../assets/profile.png';
-import Box from '@mui/material/Box';
-import TextField from '@mui/material/TextField';
-import IconButton from '@mui/material/IconButton';
-import OutlinedInput from '@mui/material/OutlinedInput';
-import InputLabel from '@mui/material/InputLabel';
-import InputAdornment from '@mui/material/InputAdornment';
-import FormControl from '@mui/material/FormControl';
-import Visibility from '@mui/icons-material/Visibility';
-import VisibilityOff from '@mui/icons-material/VisibilityOff';
-import { useNavigate } from 'react-router-dom';
+import React, { useState } from "react";
+import axios from "axios";
+import profile from "../../assets/profile.png";
+import Box from "@mui/material/Box";
+import TextField from "@mui/material/TextField";
+import IconButton from "@mui/material/IconButton";
+import OutlinedInput from "@mui/material/OutlinedInput";
+import InputLabel from "@mui/material/InputLabel";
+import InputAdornment from "@mui/material/InputAdornment";
+import FormControl from "@mui/material/FormControl";
+import Visibility from "@mui/icons-material/Visibility";
+import VisibilityOff from "@mui/icons-material/VisibilityOff";
+import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { setLogin } from "../../state/appStates"
 
 
 export default function Login_Provider() {
   const navigate = useNavigate();
+  const dispatch = useDispatch()
 
   const [showPassword, setShowPassword] = useState(false);
+
+  const [formData, setFormData] = useState({
+    username: "",
+    password: "",
+  });
+
+  const handleChange = (e, fieldName) => {
+    const { value } = e.target;
+    setFormData((prevFormData) => ({
+      ...prevFormData,
+      [fieldName]: value,
+    }));
+  };
+
+  const handleSubmit = () => {
+    console.log(formData);
+    // Make the POST request to the backend
+    axios
+      .post("https://gdsc-mbcet-backend.onrender.com/api/v1/auth/provider/login", formData)
+      .then((response) => {
+        if (response.status === 200) {
+          console.log(response.data);
+          const token = response.data.token;
+          localStorage.setItem("token", token);
+            dispatch(setLogin(response.data));
+            navigate("/home/provider"); 
+          }
+        
+      })
+      .catch((error) => {
+        // Handle any errors that occur during the request
+        console.error(error);
+      });
+  };
 
   const handleClickShowPassword = () => setShowPassword((show) => !show);
 
   const handleMouseDownPassword = (event) => {
     event.preventDefault();
   };
+
   return (
     <div style={{
       textAlign: 'center',
@@ -103,7 +142,7 @@ export default function Login_Provider() {
               </FormControl>
             </div>
             <div>
-              <button onClick={()=> navigate("/home/provider")} style={{
+              <button onClick={()=> navigate("/provider")} style={{
 
                 width: '300px',
                 height: '50px',
