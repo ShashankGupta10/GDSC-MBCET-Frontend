@@ -42,42 +42,42 @@ function ProfileProvider() {
           <div className="profile-img">
             <img src={profileicon} alt="" />
           </div>
-          <h3>{data.firstName + " " + data.lastName}</h3>
+          <h3>Shashank Gupta</h3>
           <p>Service Provider</p>
         </div>
 
         <div className="profile-details">
           <div className="profile-item">
             <label htmlFor="name">Name: </label>
-            <span className="profile-item-value">{data.firstName + " " + data.lastName}</span>
+            <span className="profile-item-value">Shashank Gupta</span>
           </div>
           <div className="profile-item">
             <label htmlFor="email">Username: </label>
-            <span className="profile-item-value">{data.username}</span>
+            <span className="profile-item-value">shashank</span>
           </div>
           <div className="profile-item">
             <label htmlFor="email">Email: </label>
-            <span className="profile-item-value">{data.email}</span>
+            <span className="profile-item-value">shashank@gmail.com</span>
           </div>
           <div className="profile-item">
             <label htmlFor="name">Age: </label>
-            <span className="profile-item-value">{data.age}</span>
+            <span className="profile-item-value">20</span>
           </div>
           <div className="profile-item">
             <label htmlFor="name">Gender: </label>
-            <span className="profile-item-value">{data.gender}</span>
+            <span className="profile-item-value">Male</span>
           </div>
           <div className="profile-item">
             <label htmlFor="name">Contact: </label>
-            <span className="profile-item-value">{data.phone}</span>
+            <span className="profile-item-value">7700013317</span>
           </div>
           <div className="profile-item">
             <label htmlFor="name">Qualification: </label>
-            <span className="profile-item-value">{data.qualification}</span>
+            <span className="profile-item-value">BA</span>
           </div>
           <div className="profile-item">
             <label htmlFor="name">Experience: </label>
-            <span className="profile-item-value">{data.experience}</span>
+            <span className="profile-item-value">5 years</span>
           </div>
         </div>
       </div>

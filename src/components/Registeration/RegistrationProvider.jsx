@@ -50,7 +50,7 @@ export default function RegistrationProvider() {
       .then(response => {
         // Handle the response from the backend
         console.log(response.data);
-        navigate("/login/provider")
+        navigate("/")
       })
       .catch(error => {
         // Handle any errors that occur during the request
@@ -145,7 +145,7 @@ export default function RegistrationProvider() {
           backgroundColor: '#f5f5f5',
           gridTemplateColumns: '1fr 1fr',
           alignItems: "center",
-          width: "800px",
+          width: "900px",
           position: 'relative',
           left: "40%",
           top: '10vh',
@@ -278,6 +278,7 @@ export default function RegistrationProvider() {
               value={formData.IDProof}
               onChange={handleFileUploadID}
               sx={{
+                marginTop:'10px',
                 textAlign: 'center',
                 justifySelf: 'center',
                 backgroundColor: "#006494"

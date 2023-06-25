@@ -80,12 +80,12 @@ export default function Bidresults() {
                   gap: "10px",
                 }}
               >
-                <p style={{ fontSize: "18px" }}>Name:</p>
-                <p style={{ fontSize: "18px" }}>Date:</p>
-                <p style={{ fontSize: "18px" }}>Rating:</p>
-                <p style={{ fontSize: "18px" }}>Email:</p>
-                <p style={{ fontSize: "18px" }}>Experience:</p>
-                <p style={{ fontSize: "18px" }}>Phone:</p>
+                <p style={{ fontSize: "18px" }}>Name: Shaunak</p>
+                <p style={{ fontSize: "18px" }}>Date: 12-04-2023</p>
+                <p style={{ fontSize: "18px" }}>Rating; 11</p>
+                <p style={{ fontSize: "18px" }}>Email: shaunakrananaware@gmail.com</p>
+                <p style={{ fontSize: "18px" }}>Experience: 5 years</p>
+                <p style={{ fontSize: "18px" }}>Contact: 7700013317</p>
               </div>
               {showButton && (
                 <Box sx={{ "& button": { m: 1 }, }}>
@@ -165,12 +165,12 @@ export default function Bidresults() {
                   gap: "10px",
                 }}
               >
-                <p style={{ fontSize: "18px" }}>Name:</p>
-                <p style={{ fontSize: "18px" }}>Date:</p>
-                <p style={{ fontSize: "18px" }}>Rating:</p>
-                <p style={{ fontSize: "18px" }}>Email:</p>
-                <p style={{ fontSize: "18px" }}>Experience:</p>
-                <p style={{ fontSize: "18px" }}>Phone:</p>
+                <p style={{ fontSize: "18px" }}>Name: Shaunak</p>
+                <p style={{ fontSize: "18px" }}>Date: 12-04-2023</p>
+                <p style={{ fontSize: "18px" }}>Rating; 11</p>
+                <p style={{ fontSize: "18px" }}>Email: shaunakrananaware@gmail.com</p>
+                <p style={{ fontSize: "18px" }}>Experience: 5 years</p>
+                <p style={{ fontSize: "18px" }}>Contact: 7700013317</p>
               </div>
               {showButton && (
                 <Box sx={{ "& button": { m: 1 } }}>
@@ -238,12 +238,12 @@ export default function Bidresults() {
                   gap: "10px",
                 }}
               >
-                <p style={{ fontSize: "18px" }}>Name:</p>
-                <p style={{ fontSize: "18px" }}>Date:</p>
-                <p style={{ fontSize: "18px" }}>Rating:</p>
-                <p style={{ fontSize: "18px" }}>Email:</p>
-                <p style={{ fontSize: "18px" }}>Experience:</p>
-                <p style={{ fontSize: "18px" }}>Phone:</p>
+                <p style={{ fontSize: "18px" }}>Name: Shaunak</p>
+                <p style={{ fontSize: "18px" }}>Date: 12-04-2023</p>
+                <p style={{ fontSize: "18px" }}>Rating; 11</p>
+                <p style={{ fontSize: "18px" }}>Email: shaunakrananaware@gmail.com</p>
+                <p style={{ fontSize: "18px" }}>Experience: 5 years</p>
+                <p style={{ fontSize: "18px" }}>Contact: 7700013317</p>
               </div>
               {showButton && (
                 <Box sx={{ "& button": { m: 1 } }}>
@@ -311,12 +311,12 @@ export default function Bidresults() {
                   gap: "10px",
                 }}
               >
-                <p style={{ fontSize: "18px" }}>Name:</p>
-                <p style={{ fontSize: "18px" }}>Date:</p>
-                <p style={{ fontSize: "18px" }}>Rating:</p>
-                <p style={{ fontSize: "18px" }}>Email:</p>
-                <p style={{ fontSize: "18px" }}>Experience:</p>
-                <p style={{ fontSize: "18px" }}>Phone:</p>
+                <p style={{ fontSize: "18px" }}>Name: Shaunak</p>
+                <p style={{ fontSize: "18px" }}>Date: 12-04-2023</p>
+                <p style={{ fontSize: "18px" }}>Rating; 11</p>
+                <p style={{ fontSize: "18px" }}>Email: shaunakrananaware@gmail.com</p>
+                <p style={{ fontSize: "18px" }}>Experience: 5 years</p>
+                <p style={{ fontSize: "18px" }}>Contact: 7700013317</p>
               </div>
               {showButton && (
                 <Box sx={{ "& button": { m: 1 } }}>

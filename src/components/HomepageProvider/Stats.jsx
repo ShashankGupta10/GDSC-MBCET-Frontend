@@ -203,7 +203,7 @@ const pastjobs = (
         justifyContent: "center",
         alignItems: "center",
         margin: "10px 10px 10px 10px",
-        width: "1920px",
+        width: "100vw",
         gap: "50px",
       }}
     >

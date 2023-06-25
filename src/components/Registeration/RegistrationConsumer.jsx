@@ -42,13 +42,14 @@ export default function RegistrationConsumer() {
 
   const handleSubmit = () => {
     console.log(formData);
+    navigate('/')
     // Make the POST request to the backend
     axios
       .post('https://gdsc-mbcet-backend.onrender.com/api/v1/auth/consumer/signup', formData)
       .then(response => {
         // Handle the response from the backend
         console.log(response.data);
-        navigate("/home/provider")
+        
       })
       .catch(error => {
         // Handle any errors that occur during the request
