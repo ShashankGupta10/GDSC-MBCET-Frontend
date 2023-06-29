@@ -43,19 +43,8 @@ export default function RegistrationProvider() {
   };
 
   const handleSubmit = () => {
-    console.log(formData);
-    // Make the POST request to the backend
-    axios
-      .post('https://gdsc-mbcet-backend.onrender.com/api/v1/auth/provider/signup', formData)
-      .then(response => {
-        // Handle the response from the backend
-        console.log(response.data);
-        navigate("/")
-      })
-      .catch(error => {
-        // Handle any errors that occur during the request
-        console.error(error);
-      });
+    navigate("/")
+    
   };
 
 

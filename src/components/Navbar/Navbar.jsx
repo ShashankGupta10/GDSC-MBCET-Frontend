@@ -19,7 +19,7 @@ import { setLogout } from "../../state/appStates";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
-const pages = ["BID"];
+const pages = ["Redeem", "Search"];
 const settings = ["Profile", "Dashboard", "Logout"];
 
 export default function Navbar(props) {
@@ -42,6 +42,16 @@ export default function Navbar(props) {
       }
     }
   };
+
+  const handlePageClick = (page)=>{
+    if(page==="Search"){
+      navigate("/provider/search")
+    }
+
+    else {
+      navigate("/redeem")
+    }
+  }
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -159,7 +169,7 @@ export default function Navbar(props) {
             >
               {pages.map((page) => (
                 <MenuItem key={page}>
-                  <Typography textAlign="center">{page}</Typography>
+                  <Typography textAlign="center" onClick={()=> handlePageClick(page)}>{page}</Typography>
                 </MenuItem>
               ))}
             </Menu>
@@ -188,6 +198,7 @@ export default function Navbar(props) {
               <Button
                 key={page}
                 sx={{ my: 2, color: "white", display: "block" }}
+                onClick={()=> handlePageClick(page)}
               >
                 {page}
               </Button>

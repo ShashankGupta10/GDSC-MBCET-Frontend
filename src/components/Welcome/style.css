@@ -297,6 +297,7 @@ button:hover .button-text {
 
 .feature img {
   border-bottom: 0.5px solid gray;
+  width: 200px;
 }
 
 .feature h3 {
@@ -309,7 +310,7 @@ button:hover .button-text {
 }
 
 .feature:hover {
-  box-shadow: rgba(0, 0, 0, 0.3) 0px 4px 12px;
+  box-shadow: rgba(248, 248, 248, 0.3) 0px 4px 12px;
   transition: 0.5s ease-in-out;
   transform: translateY(-12px);
 }

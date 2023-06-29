@@ -52,34 +52,34 @@ function WelcomePage() {
         </div>
         <div className="features-card">
           <div className="feature">
-            <img src={electrician} alt="" />
+            <img src={electrician} style={{width:'400px',height:'400px'}} alt="" />
             <h3>Electrician</h3>
             <p>Best in class electrician safely doing your work and providing you service.</p>
           </div>
           <div className="feature">
-            <img src={carpenter} alt="" />
+            <img src={carpenter} style={{width:'400px',height:'400px'}} alt="" />
             <h3>Carpenter</h3>
             <p>Any day work or carpentry will do and provide quick service.</p>
           </div>
           <div className="feature">
-            <img src={plumber} alt="" />
+            <img src={plumber} style={{width:'400px',height:'400px'}} alt="" />
             <h3>Plumber</h3>
             <p>Leakages are a problem? We provide you a solution! Get in touch with the best plumbers.</p>
           </div>
         </div>
         <div className="features-card">
           <div className="feature">
-            <img src={barber} alt="" />
+            <img src={barber} style={{width:'400px',height:'400px'}} alt="" />
             <h3>Hair Specialist</h3>
             <p>Who can imagine getting barbers at home? Have a great haircut at home.</p>
           </div>
           <div className="feature">
-            <img src={lawyer} alt="" />
+            <img src={lawyer}  style={{width:'400px',height:'400px'}} alt="" />
             <h3>Legal Advice</h3>
             <p>Got into legal troubles? Find the best lawyers to talk and find solutions.</p>
           </div>
           <div className="feature">
-            <img src={home} alt="" />
+            <img src={home} style={{width:'400px',height:'400px'}} alt="" />
             <h3>Painting</h3>
             <p>Wanna give your house a new look? Let's paint it with new colors.</p>
           </div>

@@ -19,7 +19,7 @@ function Rewards() {
           <div className="reward-tabs">
             <a href="#">
               <div className="tab-img">
-                <img src="src\assets\card-img.svg" alt="" />
+                <img  src="src\assets\card-img.svg" alt="" />
               </div>
               <div className="rewards">
                 <h5>Book a Service</h5>

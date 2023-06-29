@@ -27,7 +27,7 @@ function App() {
         <Route path="provider/profile" element={<ProfileProvider />} />
         <Route path="consumer/profile" element={<ProfileConsumer isConsumer= {true}/>} />
         <Route path="/provider/search" element={<Search />} />
-        <Route path="/rewards" element={<Rewards isConsumer= {true}/>} />
+        <Route path="/redeem" element={<Rewards isConsumer= {true}/>} />
         <Route path="/bids" element={<Bidresults isConsumer= {true}/>} />
       </Routes>
     </BrowserRouter>
