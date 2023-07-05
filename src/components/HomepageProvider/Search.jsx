@@ -11,14 +11,15 @@ export default function Search() {
   const [data, setData] = useState([]);
   const [job, setJob] = useState("");
   const [amount, setAmount] = useState(null);
+  const [selectedJob, setSelectedJob] = useState(null);
 
-  const handleMakeBid = (job) => {
+  const handleMakeBid = () => {
     const token = localStorage.getItem("token");
     const headers = { authorization: `Bearer ${token}` };
-    console.log(amount)
+    console.log(amount);
     axios
       .patch(
-        `http://localhost:3002/api/v1/bidTicket/${job._id}/${job.user._id}`,
+        `http://localhost:3002/api/v1/bidTicket/${selectedJob._id}/${selectedJob.user._id}`,
         {
           amount: amount,
         },
@@ -38,6 +39,10 @@ export default function Search() {
 
   const handleAmount = (e) => {
     setAmount(e.target.value);
+  };
+
+  const handleJobClick = (job) => {
+    setSelectedJob(job);
   };
 
   useEffect(() => {
@@ -61,10 +66,30 @@ export default function Search() {
     return (
       <>
         <Navbar />
-        <input type="text" name="" id="" value={job} onChange={handleChange} />
+        <input
+                placeholder="Search For A Job"
+                style={{
+                  display: "block",
+                  margin: "auto",
+                  marginTop: "30px",
+                  width: "50%",
+                  padding: "10px",
+                  paddingLeft:'20px',
+                  paddingRight:'15px',
+                  marginBottom: "30px",
+                  borderRadius: "20px",
+                  border:'1px solid black',
+                  backgroundColor: '#E6E6E6',
+                  color:'black',
+                }}
+                value={job}
+                onChange={handleChange}
+              />
         {data.jobs.map((job) => {
+          const isSelected = selectedJob && selectedJob._id === job._id;
           return (
             <Box
+              key={job._id}
               sx={{
                 border: "1px solid #ccc",
                 borderRadius: "4px",
@@ -85,10 +110,7 @@ export default function Search() {
                   padding: "5px",
                   gap: "30px",
                 }}
-                onClick={() => {
-                  var button = document.querySelector(".bidinfo");
-                  button.style.display = "flex";
-                }}
+                onClick={() => handleJobClick(job)}
               >
                 <div style={{ display: "flex", gap: "100px" }}>
                   <div
@@ -120,6 +142,7 @@ export default function Search() {
                         alignItems: "center",
                         padding: "10px",
                         fontFamily: "Poppins",
+                        width: "250px"
                       }}
                     >
                       Name: {job.user.firstName + " " + job.user.lastName}
@@ -174,38 +197,37 @@ export default function Search() {
                     {job.description}
                   </p>
                 </div>
-                <div
-                  className="bidinfo"
-                  style={{ display: "none", gap: "50px" }}
-                >
-                  <input
-                    required
-                    placeholder="Price"
-                    style={{ borderRadius: "10px", padding: "10px" }}
-                    value={amount}
-                    onChange={handleAmount}
-                  ></input>
-                  <Button
-                    onClick={() => handleMakeBid(job)}
-                    sx={{
-                      width: "150px",
-                      background: "white",
-                      border: "2px solid #3a7af0",
-                      color: "#1B98E0",
-                      display: "flex",
-                      justifyContent: "center",
-                      marginRight: "auto",
-                      borderRadius: "10px",
-                      "&:hover": {
-                        backgroundColor: "#3a7af0",
-                        color: "lightgrey",
-                      },
-                    }}
-                    variant="contained"
-                  >
-                    BID
-                  </Button>
-                </div>
+                {isSelected && (
+                  <div className="bidinfo" style={{ display: "flex", gap: "50px" }}>
+                    <input
+                      required
+                      placeholder="Price"
+                      style={{ borderRadius: "10px", padding: "10px" }}
+                      value={amount}
+                      onChange={handleAmount}
+                    />
+                    <Button
+                      onClick={handleMakeBid}
+                      sx={{
+                        width: "150px",
+                        background: "white",
+                        border: "2px solid #3a7af0",
+                        color: "#1B98E0",
+                        display: "flex",
+                        justifyContent: "center",
+                        marginRight: "auto",
+                        borderRadius: "10px",
+                        "&:hover": {
+                          backgroundColor: "#3a7af0",
+                          color: "lightgrey",
+                        },
+                      }}
+                      variant="contained"
+                    >
+                      BID
+                    </Button>
+                  </div>
+                )}
               </div>
             </Box>
           );

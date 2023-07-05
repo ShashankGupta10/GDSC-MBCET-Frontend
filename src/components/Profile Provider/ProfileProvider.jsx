@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import './profileProvider.css';
 import profileicon from '../../assets/profile.png';
 import axios from "axios";
+import Navbar from "../Navbar/Navbar";
 
 function ProfileProvider() {
   const [data, setData] = useState([]);
@@ -25,17 +26,7 @@ function ProfileProvider() {
   } else {
   return (
     <div>
-      <nav>
-        <div className="container">
-          <div className="logo">
-            <h2>Hathacons</h2>
-          </div>
-          <div className="btn-container">
-            <button className="register-btn">Register</button>
-            <button className="login-btn">Login</button>
-          </div>
-        </div>
-      </nav>
+      <Navbar />
 
       <div className="hero-container">
         <div className="profile-info">
@@ -77,7 +68,7 @@ function ProfileProvider() {
           </div>
           <div className="profile-item">
             <label htmlFor="name">Experience: </label>
-            <span className="profile-item-value">5 years</span>
+            <span className="profile-item-value">8 years</span>
           </div>
         </div>
       </div>

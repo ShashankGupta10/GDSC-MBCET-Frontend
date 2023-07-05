@@ -20,7 +20,7 @@ import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
 const pages = ["Redeem", "Search"];
-const settings = ["Profile", "Dashboard", "Logout"];
+const settings = ["Profile", "Logout"];
 
 export default function Navbar(props) {
   const navigate = useNavigate();
