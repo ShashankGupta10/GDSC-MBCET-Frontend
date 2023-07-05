@@ -1,25 +1,28 @@
 import React from "react";
-import pth from '../../assets/profile.png'
-import one from '../../assets/customericon.png';
-import two from '../../assets/pointsicon.png'
-import three from '../../assets/staricon.png'
+import pth from "../../assets/profile.png";
+import one from "../../assets/customericon.png";
+import two from "../../assets/pointsicon.png";
+import three from "../../assets/staricon.png";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import Navbar from "../Navbar/Navbar";
 import { useNavigate } from "react-router-dom";
 
 export default function ConsumerDashboard(props) {
-    const navigate = useNavigate();
+  const navigate = useNavigate();
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
-  const handleclick = (bid) =>{
-    navigate('/bids')
-  }
+  const handleclick = (bid) => {
+    navigate(`/bids/${bid._id}`);
+  };
   useEffect(() => {
     const token = localStorage.getItem("token");
     const headers = { Authorization: `Bearer ${token}` };
     axios
-      .get("https://gdsc-mbcet-backend.onrender.com/api/v1/dashboard/consumer", { headers })
+      .get(
+        "https://gdsc-mbcet-backend.onrender.com/api/v1/dashboard/consumer",
+        { headers }
+      )
       .then((resp) => {
         console.log(resp.data);
         setData(resp.data);
@@ -34,7 +37,10 @@ export default function ConsumerDashboard(props) {
     return <></>;
   }
   return (
-    <><div><Navbar isConsumer= {true}/></div>
+    <>
+      <div>
+        <Navbar isConsumer={true} />
+      </div>
       <div
         style={{
           display: "flex",
@@ -121,7 +127,8 @@ export default function ConsumerDashboard(props) {
           >
             {data.activeBids.map((bid) => {
               return (
-                <div onClick={()=> handleclick(bid)}
+                <div
+                  onClick={() => handleclick(bid)}
                   style={{
                     display: "flex",
                     height: "200px",

@@ -44,7 +44,6 @@ export default function RegistrationProvider() {
 
   const handleSubmit = () => {
     navigate("/")
-    
   };
 
 

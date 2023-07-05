@@ -12,12 +12,11 @@ import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { setLogin } from "../../state/appStates"
-
+import { setLogin } from "../../state/appStates";
 
 export default function Login_Provider() {
   const navigate = useNavigate();
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
   const [showPassword, setShowPassword] = useState(false);
 
@@ -38,16 +37,15 @@ export default function Login_Provider() {
     console.log(formData);
     // Make the POST request to the backend
     axios
-      .post("https://gdsc-mbcet-backend.onrender.com/api/v1/auth/provider/login", formData)
+      .post("http://localhost:3002/api/v1/auth/provider/login", formData)
       .then((response) => {
         if (response.status === 200) {
           console.log(response.data);
           const token = response.data.token;
           localStorage.setItem("token", token);
-            dispatch(setLogin(response.data));
-            navigate("/home/provider"); 
-          }
-        
+          dispatch(setLogin(response.data));
+          navigate("/provider");
+        }
       })
       .catch((error) => {
         // Handle any errors that occur during the request
@@ -62,69 +60,93 @@ export default function Login_Provider() {
   };
 
   return (
-    <div style={{
-      textAlign: 'center',
-      justifyContent: 'center',
-      display: 'flex',
-      paddingTop: '90px',
-      paddingBottom: '90px',
-      backgroundColor: '#e1e3eb'
-    }}>
-      <div style={{
-        display: 'flex',
-        justifyContent: 'center',
-        height: '550px',
-        width: '35%',
-        boxShadow: '11px 12px 13px 12px rgb(207, 207, 207)',
-        paddingTop: '30px',
-        borderRadius: '60px',
-        backgroundColor: 'white'
-      }} >
+    <div
+      style={{
+        textAlign: "center",
+        justifyContent: "center",
+        display: "flex",
+        paddingTop: "90px",
+        paddingBottom: "90px",
+        backgroundColor: "#e1e3eb",
+      }}
+    >
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          height: "550px",
+          width: "35%",
+          boxShadow: "11px 12px 13px 12px rgb(207, 207, 207)",
+          paddingTop: "30px",
+          borderRadius: "60px",
+          backgroundColor: "white",
+        }}
+      >
         <div>
-          <div style={{
-            paddingTop: '20px',
-            justifyContent: 'center',
-            display: 'flex'
-          }}>
-            <div style={{
-              backgroundColor: 'rgb(223, 221, 221)',
-              borderRadius: '150px',
-              alignItems: 'center',
-              display: 'flex',
-              justifyContent: 'center',
-              height: '115px',
-              width: '115px'
-            }}>
-              <img src={profile} alt="profile" style={{
-
-                backgroundColor: 'rgb(223, 221, 221)',
-                borderRadius: '150px',
-                alignItems: 'center',
-                display: 'flex',
-                justifyContent: 'center',
-                height: '115px',
-                width: '115px',
-              }} />
+          <div
+            style={{
+              paddingTop: "20px",
+              justifyContent: "center",
+              display: "flex",
+            }}
+          >
+            <div
+              style={{
+                backgroundColor: "rgb(223, 221, 221)",
+                borderRadius: "150px",
+                alignItems: "center",
+                display: "flex",
+                justifyContent: "center",
+                height: "115px",
+                width: "115px",
+              }}
+            >
+              <img
+                src={profile}
+                alt="profile"
+                style={{
+                  backgroundColor: "rgb(223, 221, 221)",
+                  borderRadius: "150px",
+                  alignItems: "center",
+                  display: "flex",
+                  justifyContent: "center",
+                  height: "115px",
+                  width: "115px",
+                }}
+              />
             </div>
           </div>
           <div>
-            <h1 style={{ marginBottom: '20px' }}>Login Page</h1>
+            <h1 style={{ marginBottom: "20px" }}>Login Page</h1>
             <Box
               component="form"
               sx={{
-                '& > :not(style)': { m: 2, width: '40ch' },
+                "& > :not(style)": { m: 2, width: "40ch" },
               }}
               noValidate
               autoComplete="off"
             >
-              <TextField id="outlined-basic" label="Username" variant="outlined" />
+              <TextField
+                id="outlined-basic"
+                label="Username"
+                variant="outlined"
+                value={formData.username}
+                onChange={(e) => handleChange(e, "username")}
+              />
             </Box>
             <div className="second-input">
-              <FormControl sx={{ m: 0, width: '40ch', marginBottom: '25px' }} variant="outlined">
-                <InputLabel htmlFor="outlined-adornment-password">Password</InputLabel>
+              <FormControl
+                sx={{ m: 0, width: "40ch", marginBottom: "25px" }}
+                variant="outlined"
+              >
+                <InputLabel htmlFor="outlined-adornment-password">
+                  Password
+                </InputLabel>
                 <OutlinedInput
+                  value={formData.password}
+                  onChange={(e) => handleChange(e, "password")}
                   id="outlined-adornment-password"
-                  type={showPassword ? 'text' : 'password'}
+                  type={showPassword ? "text" : "password"}
                   endAdornment={
                     <InputAdornment position="end">
                       <IconButton
@@ -142,22 +164,28 @@ export default function Login_Provider() {
               </FormControl>
             </div>
             <div>
-              <button onClick={()=> navigate("/provider")} style={{
-
-                width: '300px',
-                height: '50px',
-                borderRadius: '60px',
-                backgroundColor: '#006494',
-                color: 'white',
-                fontSize: '25px',
-                border: 'none',
-              }}>Login</button>
+              <button
+                onClick={handleSubmit}
+                style={{
+                  width: "300px",
+                  height: "50px",
+                  borderRadius: "60px",
+                  backgroundColor: "#006494",
+                  color: "white",
+                  fontSize: "25px",
+                  border: "none",
+                }}
+              >
+                Login
+              </button>
             </div>
-            <p style={{
-              marginTop: '8px',
-              fontSize: "15px",
-              fontWeight: "400"
-            }}>
+            <p
+              style={{
+                marginTop: "8px",
+                fontSize: "15px",
+                fontWeight: "400",
+              }}
+            >
               <a href="#">Forgot password ?</a> Or <a href="#">Sign Up</a>
             </p>
           </div>

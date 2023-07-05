@@ -10,7 +10,7 @@ import ProfileProvider from "./components/Profile Provider/ProfileProvider";
 import ProfileConsumer from "./components/ProfileConsumer/ProfileConsumer";
 import Search from "./components/HomepageProvider/Search";
 import Rewards from "./components/Rewards";
-import Bidresults from "./components/HomepageProvider/bidresults";
+import Bidresults from "./components/HomepageProvider/Bidresults";
 import ConsumerDashboard from "./components/HomepageProvider/ConsumerDashboard";
 
 function App() {
@@ -28,7 +28,7 @@ function App() {
         <Route path="consumer/profile" element={<ProfileConsumer isConsumer= {true}/>} />
         <Route path="/provider/search" element={<Search />} />
         <Route path="/redeem" element={<Rewards isConsumer= {true}/>} />
-        <Route path="/bids" element={<Bidresults isConsumer= {true}/>} />
+        <Route path={`/bids/:id`} element={<Bidresults isConsumer= {true}/>} />
       </Routes>
     </BrowserRouter>
   );

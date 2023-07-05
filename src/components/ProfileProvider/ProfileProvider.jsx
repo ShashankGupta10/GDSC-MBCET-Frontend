@@ -24,25 +24,15 @@ function ProfileProvider() {
     return <></>;
   } else {
     return (
+      <>
+      <div><Navbar/></div>
       <div>
-        <nav>
-          <div className="container">
-            <div className="logo">
-              <h2>Hathacons</h2>
-            </div>
-            <div className="btn-container">
-              <button className="register-btn">Register</button>
-              <button className="login-btn">Login</button>
-            </div>
-          </div>
-        </nav>
-
         <div className="hero-container">
           <div className="profile-info">
             <div className="profile-img">
               <img src={profileicon} alt="" />
             </div>
-            <h3>John Doe</h3>
+            <h3>{data.firstName + " " + data.lastName}</h3>
             <p>Service Provider</p>
           </div>
 
@@ -86,10 +76,10 @@ function ProfileProvider() {
           <div className="f-item-con">
             <div className="app-info">
               <span className="app-name">
-                <span className="app-initial">H</span>athacons
+                <span className="app-initial">H</span>ireBids
               </span>
               <p>
-                We are<strong> Hathacons </strong>, dedicated to providing the
+                We are<strong> HireBids </strong>, dedicated to providing the
                 best service to our customers.
               </p>
             </div>
@@ -144,6 +134,7 @@ function ProfileProvider() {
           </div>
         </footer>
       </div>
+      </>
     );
   }
 }
