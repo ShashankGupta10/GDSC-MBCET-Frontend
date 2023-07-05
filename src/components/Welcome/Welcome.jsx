@@ -16,7 +16,7 @@ function WelcomePage() {
       <nav>
         <div className="container">
           <div className="logo">
-            <h2>Hathacons</h2>
+            <h2>Hire Bids</h2>
           </div>
           <div className="btn-container" style={{gap:'10px'}}>
             <button className="register-btn" onClick={()=> navigate("/signup/provider")} style={{border:'0.5px solid black',borderRadius:'8px'}}>Register As A Service Provider</button>
@@ -28,10 +28,10 @@ function WelcomePage() {
       <div className="hero-container">
         <div className="hero-content">
           <h1>
-            Your trusted partner <span>Service Connect.</span>
+            Your trusted partner <span>Service Connect, Hire Bids !</span>
           </h1>
           <p>
-            At Hackathons, we deliver top-notch professional services tailored to meet your specific needs. With our
+            At <b>HireBids</b>, we deliver top-notch professional services tailored to meet your specific needs. With our
             extensive expertise and commitment to excellence, we are your trusted partner for all your requirements.
           </p>
           <p>We assure you that we will provide you the best service possible and a smooth path to your fixings.</p>

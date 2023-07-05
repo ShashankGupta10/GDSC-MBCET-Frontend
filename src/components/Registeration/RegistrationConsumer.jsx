@@ -120,13 +120,14 @@ export default function RegistrationConsumer() {
           gridTemplateColumns: '1fr 1fr',
           alignItems: "center",
           width: "900px",
+          paddingTop: "75px",
           position: 'relative',
           left: "40%",
           top: '20vh',
           borderRadius: '10px',
           boxShadow: 'rgba(255, 255, 255, 0.35) 0px 50px 100px -20px, rgba(255, 255, 255, 0.5) 0px 30px 60px -30px, rgba(255, 255, 255, 0.55) 0px -2px 6px 0px inset',
           paddingLeft: '70px',
-          paddingBottom: '20px'
+          paddingBottom: '85px'
         }}>
           <h2 style={{ gridColumn: "2 span", textAlign: 'center', textShadow: '2px 2px 4px rgba(0, 0, 0, 0.3)' }}>Registration Form</h2>
 

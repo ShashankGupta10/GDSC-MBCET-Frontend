@@ -55,8 +55,8 @@ export default function ConsumerDashboard(props) {
           }}
         >
           <img src={one} style={{ width: "75px" }}></img>
-          <p>10</p>
-          <p>Points</p>
+          <p>{data.pastJobs.length}</p>
+          <p>Past Jobs</p>
         </div>
         <div
           style={{
@@ -71,8 +71,8 @@ export default function ConsumerDashboard(props) {
           }}
         >
           <img src={two} style={{ width: "75px" }}></img>
-          <p>10</p>
-          <p>Points</p>
+          <p>{data.activeBids.length}</p>
+          <p>Active Tickets</p>
         </div>
         <div
           style={{
@@ -87,7 +87,7 @@ export default function ConsumerDashboard(props) {
           }}
         >
           <img src={three} style={{ width: "75px" }}></img>
-          <p>10</p>
+          <p>{data.points}</p>
           <p>Points</p>
         </div>
       </div>
@@ -233,7 +233,7 @@ export default function ConsumerDashboard(props) {
                         width: "100%",
                         borderRadius: "50%",
                       }}
-                      src={"pth"}
+                      src={pth}
                     ></img>
                   </div>
                   <div
@@ -258,13 +258,13 @@ export default function ConsumerDashboard(props) {
                       }}
                     >
                       <p style={{ fontSize: "18px", marginBottom: "8px" }}>
-                        {"Pranav Patil"}
+                        {work.name}
                       </p>
                       <p style={{ fontSize: "18px", marginBottom: "8px" }}>
                         {work.date.slice(0, 10)}
                       </p>
                       <p style={{ fontSize: "18px", marginBottom: "8px" }}>
-                        {8657192360}
+                        {work.phone}
                       </p>
                     </div>
                   </div>

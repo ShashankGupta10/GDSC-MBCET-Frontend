@@ -1,0 +1,377 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background-color: #f5f5f5;
+}
+
+nav {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px;
+  border-bottom: 1px solid grey;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  padding-top: 8px;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: space-around;
+}
+
+.nav-links li {
+  list-style: none;
+  text-decoration: none;
+  padding: 0px 10px;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: black;
+  font-size: 18px;
+}
+
+.btn-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.register-btn {
+  background-color: inherit;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.login-btn {
+  background-color: #3a46f0;
+  color: white;
+  padding: 10px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  width: 100px;
+}
+
+.register-btn,
+.login-btn {
+  font-size: 16px;
+}
+
+.login-btn:hover {
+  background-color: rgb(96, 96, 247);
+}
+
+.hero-container {
+  display: flex;
+  margin-top: 60px;
+  margin-left: 90px;
+  padding: 0px 20px;
+  justify-content: center;
+  grid-template-columns: 1fr 1fr;
+}
+
+
+.hero-content h1 {
+  font-size: 40px;
+  font-weight: 600;
+}
+
+.hero-content h1 span{
+  color: #3a46f0;
+}
+
+.hero-content h1,
+.hero-content p,
+.hero-content button {
+  margin: 20px 0px;
+}
+
+button {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  outline: none;
+  border: 0;
+  vertical-align: middle;
+  text-decoration: none;
+  background: transparent;
+  padding: 0;
+  font-size: inherit;
+  font-family: inherit;
+}
+
+button.learn-more {
+  width: 12rem;
+  height: auto;
+}
+
+button.learn-more .circle {
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  position: relative;
+  display: block;
+  margin: 0;
+  width: 3rem;
+  height: 3rem;
+  background: #3a46f0;
+  border-radius: 1.625rem;
+}
+
+button.learn-more .circle .icon {
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  background: #fff;
+}
+
+button.learn-more .circle .icon.arrow {
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  left: 0.625rem;
+  width: 1.125rem;
+  height: 0.125rem;
+  background: none;
+}
+
+button.learn-more .circle .icon.arrow::before {
+  position: absolute;
+  content: "";
+  top: -0.29rem;
+  right: 0.0625rem;
+  width: 0.625rem;
+  height: 0.625rem;
+  border-top: 0.125rem solid #fff;
+  border-right: 0.125rem solid #fff;
+  transform: rotate(45deg);
+}
+
+button.learn-more .button-text {
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 0.75rem 0;
+  margin: 0 0 0 1.85rem;
+  color: #282936;
+  font-weight: 700;
+  line-height: 1.6;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+button:hover .circle {
+  width: 100%;
+}
+
+button:hover .circle .icon.arrow {
+  background: #fff;
+  transform: translate(1rem, 0);
+}
+
+button:hover .button-text {
+  color: #fff;
+}
+
+.hero-img {
+  width: 60%;
+  height: 500px;
+  margin-right: 90px;
+  padding-left: 25px;
+}
+
+.hero-img img {
+  margin-left: 0;
+  width: 100%;
+  /* border-radius: 100%; */
+}
+
+/* .electrician {
+  transform: translateY(-70px) translateX(80px);
+} */
+
+.carpenter {
+  transform: translateY(-250px) translateX(400px);
+}
+
+.plumber {
+  transform: translateY(-380px) translateX(-150px);
+}
+
+/* .profile-container {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  justify-content: space-evenly;
+  margin-top: 50px;
+}
+*/
+
+.profile-img img {
+    height: 150px;
+    margin-bottom: 20px;
+    border: 2px solid black;
+    border-radius: 15px;
+    padding: 10px;
+} 
+
+.profile-info {
+    margin-right: 120px;
+}
+
+.profile-info h3, .profile-info p{
+    text-align: center;
+} 
+
+.profile-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    gap: 10px;
+    border-bottom: 2.5px solid #1f1d1d;
+    border-radius: 2.5px;
+}
+
+.profile-item-value {
+    margin-left: 100px;
+    
+    padding-bottom: 2px;
+
+}
+.profile-details{
+    margin-bottom: 40px;
+    justify-content: stretch;
+}
+
+.space-y-2> :not([hidden])~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(0.5rem * var(--tw-space-y-reverse));
+}
+
+footer {
+  background-color: #111010;
+}
+
+.f-item-con {
+  padding: 1.5rem 4rem;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-gap: 2rem;
+}
+
+footer .app-name {
+  color: white;
+  border-left: 4px solid var(--theme-col);
+  padding-left: 1.5rem;
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+  font-weight: 700;
+}
+
+.app-name .app-initial {
+  color: var(--theme-col);
+}
+
+footer .app-info p {
+  color: white;
+  padding-left: 1.65rem;
+}
+
+footer .footer-title {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  color: white;
+  border-left: 4px solid var(--theme-col);
+  padding-left: 1.5rem;
+  height: fit-content;
+}
+
+footer ul {
+  padding-left: 1.75rem;
+  color: white;
+  font-size: 0.875rem
+    /* 14px */
+  ;
+  line-height: 1.25rem;
+  margin-top: .5rem;
+}
+
+footer ul li {
+  margin: .25rem 0;
+  cursor: pointer;
+  color: #d4d4d4;
+  width: fit-content;
+}
+
+footer ul li:hover {
+  color: white;
+}
+
+footer .help-sec {
+  grid-column-start: 2;
+}
+
+footer .cr-con {
+  background-color: #232127;
+  color: white;
+  padding: 1rem 4rem;
+  text-align: center;
+}
+
+.g-i-t {
+  display: grid;
+  grid-column-start: 3;
+  grid-row-start: 1;
+  grid-row-end: 3;
+}
+
+.g-i-t form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1rem;
+  --tw-space-y-reverse: 0;
+  margin-top: calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(0.5rem * var(--tw-space-y-reverse));
+}
+
+form .g-inp {
+  padding: .25rem .5rem;
+  font-size: 16px;
+}
+
+.g-inp textarea {
+  height: 150px;
+}
+
+.f-btn {
+  padding: .25rem 1rem;
+  background-color: var(--theme-col);
+  border-radius: .25rem;
+  font-size: 16px;
+  color: white;
+  font-weight: 500;
+}
+
+.f-btn:hover {
+  background-color: #d8d8d8;
+  color: #282936;
+}

@@ -118,7 +118,7 @@ export default function RegistrationProvider() {
       width: '100vw',
       height: '100vh'
     }}>
-      <div style={{backgroundImage: `url(${imageurl})`,top:'150px',left:'80px',position:'absolute',width:'550px',height:'550px'}}></div>
+      <div style={{backgroundImage: `url(${imageurl})`,top:'150px',left:'80px',position:'absolute',width:'550px',height:'800px'}}></div>
 
       <Box
         component="form"
@@ -135,13 +135,15 @@ export default function RegistrationProvider() {
           gridTemplateColumns: '1fr 1fr',
           alignItems: "center",
           width: "900px",
+          paddingTop: "100px",
           position: 'relative',
           left: "40%",
           top: '10vh',
           borderRadius: '10px',
           boxShadow: 'rgba(255, 255, 255, 0.35) 0px 50px 100px -20px, rgba(255, 255, 255, 0.5) 0px 30px 60px -30px, rgba(255, 255, 255, 0.55) 0px -2px 6px 0px inset',
           paddingLeft: '70px',
-          paddingBottom: '20px'
+          paddingBottom: '20px',
+
         }}>
           <h2 style={{ gridColumn: "2 span", textAlign: 'center',textShadow: '2px 2px 4px rgba(0, 0, 0, 0.3)' }}>Registration Form</h2>
           
