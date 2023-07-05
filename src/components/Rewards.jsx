@@ -1,9 +1,13 @@
 import React, { useState } from 'react';
 import './rewards.css';
 import Navbar from './Navbar/Navbar';
-
+import { useNavigate } from 'react-router-dom';
 function Rewards() {
   const [redeemAmount, setRedeemAmount] = useState(100);
+  const navigate = useNavigate()
+  const handleRewards = ()=>{
+    navigate("/ref")
+  }
   return (
     <>
     <div><Navbar/></div>
@@ -35,7 +39,7 @@ function Rewards() {
               <div className="tab-img">
                 <img src="src\assets\speaker-img.svg" alt="" />
               </div>
-              <div className="rewards">
+              <div className="rewards" onClick={handleRewards}>
                 <h5>Refer a Friend</h5>
                 <p>Earn 50 points for referring a friend</p>
               </div>
@@ -98,7 +102,7 @@ function Rewards() {
         </div>
       </div>
 
-      <footer>
+      {/* <footer>
         <div className="f-item-con">
           <div className="app-info">
             <span className="app-name">
@@ -138,7 +142,7 @@ function Rewards() {
           </div>
         </div>
         <div className="cr-con">Copyright &copy; 2022 | Made by Hathacons</div>
-      </footer>
+      </footer> */}
     </>
   );
 }

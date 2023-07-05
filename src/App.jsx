@@ -12,6 +12,7 @@ import Search from "./components/HomepageProvider/Search";
 import Rewards from "./components/Rewards";
 import Bidresults from "./components/HomepageProvider/Bidresults";
 import ConsumerDashboard from "./components/HomepageProvider/ConsumerDashboard";
+import Ref from "./components/Ref"
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
         <Route path="/provider/search" element={<Search />} />
         <Route path="/redeem" element={<Rewards isConsumer= {true}/>} />
         <Route path={`/bids/:id`} element={<Bidresults isConsumer= {true}/>} />
+        <Route path={`/ref`} element={<Ref isConsumer= {true}/>} />
       </Routes>
     </BrowserRouter>
   );
