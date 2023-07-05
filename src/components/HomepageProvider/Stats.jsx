@@ -83,8 +83,12 @@ export default function Stats() {
                       style={{ width: "60px" }}
                     />
                   </div>
-                  <p style={{ fontSize: "30px", fontWeight: "700" }}>{data.No_of_customers}</p>
-                  <p style={{fontWeight: "550"}}>Number of Customers Attended</p>
+                  <p style={{ fontSize: "30px", fontWeight: "700" }}>
+                    {data.No_of_customers}
+                  </p>
+                  <p style={{ fontWeight: "550" }}>
+                    Number of Customers Attended
+                  </p>
                 </div>
                 <div
                   style={{
@@ -113,10 +117,16 @@ export default function Stats() {
                   >
                     <img src={starIcon} alt="Star" style={{ width: "60px" }} />
                   </div>
-                  <p style={{ fontSize: "30px", textAlign: "center", fontWeight: "700" }}>
+                  <p
+                    style={{
+                      fontSize: "30px",
+                      textAlign: "center",
+                      fontWeight: "700",
+                    }}
+                  >
                     {data.starsreceived}
                   </p>
-                  <p style={{fontWeight: "550"}}>Stars Received</p>
+                  <p style={{ fontWeight: "550" }}>Stars Received</p>
                 </div>
                 <div
                   style={{
@@ -149,10 +159,16 @@ export default function Stats() {
                       style={{ width: "60px" }}
                     />
                   </div>
-                  <p style={{ fontSize: "30px", textAlign: "center", fontWeight: "700" }}>
+                  <p
+                    style={{
+                      fontSize: "30px",
+                      textAlign: "center",
+                      fontWeight: "700",
+                    }}
+                  >
                     {data.Experience}
                   </p>
-                  <p style={{fontWeight: "550"}}>Experience</p>
+                  <p style={{ fontWeight: "550" }}>Experience</p>
                 </div>
                 <div
                   style={{
@@ -185,151 +201,167 @@ export default function Stats() {
                       style={{ width: "60px" }}
                     />
                   </div>
-                  <p style={{ fontSize: "30px", textAlign: "center", fontWeight: "700" }}>
+                  <p
+                    style={{
+                      fontSize: "30px",
+                      textAlign: "center",
+                      fontWeight: "700",
+                    }}
+                  >
                     {data.Points}
                   </p>
-                  <p style={{fontWeight: "550"}}>Points</p>
+                  <p style={{ fontWeight: "550" }}>Points</p>
                 </div>
               </div>
             </CardContent>
           </React.Fragment>
         </Card>
+        <h2 style={{ display: "flex", justifyContent: "center", marginTop: "20px" }}>PENDING BIDS</h2>
         {gotdata.openTickets.map((ticket) => {
           return (
-            <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center", margin: "30px 0 30px 0" }}>
-              <Card variant="outlined">
-                <CardContent>
-                  <h2 style={{ justifyContent: "center" }}>PENDING BIDS</h2>
-                  <Box
-                    sx={{
-                      border: "1px solid #ccc",
-                      borderRadius: "4px",
-                      padding: "16px",
-                      display: "flex",
-                      justifyContent: "center",
-                      alignItems: "center",
-                      margin: "10px 10px 10px 10px",
-                      gap: "50px",
-                    }}
-                  >
-                    <div
-                      style={{
-                        width: "50vw",
+            <>
+              {" "}
+              
+              <Box
+                sx={{
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  margin: "30px 0 30px 0",
+                }}
+              >
+                <Card variant="outlined">
+                  <CardContent>
+                    <Box
+                      sx={{
+                        border: "1px solid #ccc",
+                        borderRadius: "4px",
+                        padding: "16px",
                         display: "flex",
-                        flexDirection: "column",
+                        justifyContent: "center",
                         alignItems: "center",
-                        padding: "5px",
-                        gap: "10px",
+                        margin: "10px 10px 10px 10px",
+                        gap: "50px",
                       }}
                     >
                       <div
                         style={{
+                          width: "50vw",
                           display: "flex",
                           flexDirection: "column",
-                          gap: "20px",
+                          alignItems: "center",
+                          padding: "5px",
+                          gap: "10px",
                         }}
                       >
                         <div
                           style={{
                             display: "flex",
-                            justifyContent: "center",
-                            alignItems: "center",
+                            flexDirection: "column",
                             gap: "20px",
-                            width: "auto",
                           }}
                         >
-                          <img
-                            style={{
-                              display: "flex",
-                              height: "",
-                              width: "30%",
-                              objectFit: "contain",
-                            }}
-                            src="src\assets\profile.png"
-                            alt="img"
-                          ></img>
-                        </div>
-                        <div style={{ gap: "20px" }}>
-                          <div
-                            style={{
-                              display: "grid",
-                              gridTemplateColumns: "1fr 1fr",
-                              gap: "10px",
-                            }}
-                          >
-                            <Typography
-                              sx={{
-                                display: "flex",
-                                justifyContent: "center",
-                                alignItems: "center",
-                                padding: "10px",
-                                border: "1px solid #ccc",
-                              }}
-                            >
-                              {"Shashank Gupta"}
-                            </Typography>
-                            <Typography
-                              sx={{
-                                display: "flex",
-                                justifyContent: "center",
-                                alignItems: "center",
-                                padding: "10px",
-                                border: "1px solid #ccc",
-                              }}
-                            >
-                              {ticket.workerType}
-                            </Typography>
-                          </div>
-                          <div
-                            style={{
-                              display: "grid",
-                              gridTemplateColumns: "1fr 1fr",
-                              gap: "10px",
-                            }}
-                          >
-                            <Typography
-                              sx={{
-                                display: "flex",
-                                justifyContent: "center",
-                                alignItems: "center",
-                                padding: "10px",
-                                border: "1px solid #ccc",
-                              }}
-                            >
-                              {ticket.date}
-                            </Typography>
-                            <Typography
-                              sx={{
-                                display: "flex",
-                                justifyContent: "center",
-                                alignItems: "center",
-                                padding: "10px",
-                                border: "1px solid #ccc",
-                              }}
-                            >
-                              {"Amount Bid: 400/-"}
-                            </Typography>
-                          </div>
                           <div
                             style={{
                               display: "flex",
                               justifyContent: "center",
                               alignItems: "center",
-                              gap: "50px",
+                              gap: "20px",
+                              width: "auto",
                             }}
                           >
-                            
-                            <p style={{marginTop: "30px"}}>
-                              Address : {ticket.address}
-                            </p>
+                            <img
+                              style={{
+                                display: "flex",
+                                height: "",
+                                width: "30%",
+                                objectFit: "contain",
+                              }}
+                              src="src\assets\profile.png"
+                              alt="img"
+                            ></img>
+                          </div>
+                          <div style={{ gap: "20px" }}>
+                            <div
+                              style={{
+                                display: "grid",
+                                gridTemplateColumns: "1fr 1fr",
+                                gap: "10px",
+                              }}
+                            >
+                              <Typography
+                                sx={{
+                                  display: "flex",
+                                  justifyContent: "center",
+                                  alignItems: "center",
+                                  padding: "10px",
+                                  border: "1px solid #ccc",
+                                }}
+                              >
+                                {"Shashank Gupta"}
+                              </Typography>
+                              <Typography
+                                sx={{
+                                  display: "flex",
+                                  justifyContent: "center",
+                                  alignItems: "center",
+                                  padding: "10px",
+                                  border: "1px solid #ccc",
+                                }}
+                              >
+                                {ticket.workerType}
+                              </Typography>
+                            </div>
+                            <div
+                              style={{
+                                display: "grid",
+                                gridTemplateColumns: "1fr 1fr",
+                                gap: "10px",
+                              }}
+                            >
+                              <Typography
+                                sx={{
+                                  display: "flex",
+                                  justifyContent: "center",
+                                  alignItems: "center",
+                                  padding: "10px",
+                                  border: "1px solid #ccc",
+                                }}
+                              >
+                                {ticket.date}
+                              </Typography>
+                              <Typography
+                                sx={{
+                                  display: "flex",
+                                  justifyContent: "center",
+                                  alignItems: "center",
+                                  padding: "10px",
+                                  border: "1px solid #ccc",
+                                }}
+                              >
+                                {"Amount Bid: 400/-"}
+                              </Typography>
+                            </div>
+                            <div
+                              style={{
+                                display: "flex",
+                                justifyContent: "center",
+                                alignItems: "center",
+                                gap: "50px",
+                              }}
+                            >
+                              <p style={{ marginTop: "30px" }}>
+                                Address : {ticket.address}
+                              </p>
+                            </div>
                           </div>
                         </div>
                       </div>
-                    </div>
-                  </Box>
-                </CardContent>
-              </Card>
-            </Box>
+                    </Box>
+                  </CardContent>
+                </Card>
+              </Box>
+            </>
           );
         })}
       </Box>
