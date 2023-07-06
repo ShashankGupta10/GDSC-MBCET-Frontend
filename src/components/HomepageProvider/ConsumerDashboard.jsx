@@ -23,6 +23,7 @@ export default function ConsumerDashboard(props) {
   const [loading, setLoading] = useState(true);
   const [age, setAge] = useState("");
   const [open, setOpen] = useState(false);
+  const [openFeedback, setOpenFeedback] = useState(false);
   const [formData, setFormData] = useState({
     workerType: "",
     date: "",
@@ -49,6 +50,10 @@ export default function ConsumerDashboard(props) {
         console.log(err);
       });
   };
+  
+  const handleOpenFeedback = ()=> setOpenFeedback(true)
+  const handleCloseFeedback = ()=> setOpenFeedback(false)
+
 
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
@@ -105,7 +110,7 @@ export default function ConsumerDashboard(props) {
           }}
         >
           <img src={one} style={{ width: "75px" }}></img>
-          <p style={{fontWeight: "700"}}>{data.pastJobs.length}</p>
+          <p style={{ fontWeight: "700" }}>{data.pastJobs.length}</p>
           <p>Past Jobs</p>
         </div>
 
@@ -122,7 +127,7 @@ export default function ConsumerDashboard(props) {
           }}
         >
           <img src={two} style={{ width: "75px" }}></img>
-          <p style={{fontWeight: "700"}}>{data.activeBids.length}</p>
+          <p style={{ fontWeight: "700" }}>{data.activeBids.length}</p>
           <p>Active Tickets</p>
         </div>
         <div
@@ -138,7 +143,7 @@ export default function ConsumerDashboard(props) {
           }}
         >
           <img src={three} style={{ width: "75px" }}></img>
-          <p style={{fontWeight: "700"}}>{data.points}</p>
+          <p style={{ fontWeight: "700" }}>{data.points}</p>
           <p>Points</p>
         </div>
       </div>
@@ -489,62 +494,109 @@ export default function ConsumerDashboard(props) {
           >
             {data.pastJobs.map((work) => {
               return (
-                <div
-                  style={{
-                    display: "flex",
-                    height: "200px",
-                    borderRadius: "10px",
-                    boxShadow: "0 0 5px 0",
-                  }}
-                >
+                <>
                   <div
+                    onClick={handleOpenFeedback}
                     style={{
                       display: "flex",
-                      alignItems: "center",
-                      flex: "1",
+                      height: "200px",
+                      borderRadius: "10px",
+                      boxShadow: "0 0 5px 0",
                     }}
                   >
-                    <img
-                      style={{
-                        width: "100%",
-                        borderRadius: "50%",
-                      }}
-                      src={pth}
-                    ></img>
-                  </div>
-                  <div
-                    style={{
-                      flex: "2",
-                      padding: "15px",
-                    }}
-                  >
-                    <p
-                      style={{
-                        textAlign: "center",
-                        fontSize: "30px",
-                        fontWeight: "700",
-                      }}
-                    >
-                      {work.workerType}
-                    </p>
                     <div
                       style={{
-                        marginTop: "25px",
-                        textAlign: "center",
+                        display: "flex",
+                        alignItems: "center",
+                        flex: "1",
                       }}
                     >
-                      <p style={{ fontSize: "18px", marginBottom: "8px" }}>
-                        {work.name}
+                      <img
+                        style={{
+                          width: "100%",
+                          borderRadius: "50%",
+                        }}
+                        src={pth}
+                      ></img>
+                    </div>
+                    <div
+                      style={{
+                        flex: "2",
+                        padding: "15px",
+                      }}
+                    >
+                      <p
+                        style={{
+                          textAlign: "center",
+                          fontSize: "30px",
+                          fontWeight: "700",
+                        }}
+                      >
+                        {work.workerType}
                       </p>
-                      <p style={{ fontSize: "18px", marginBottom: "8px" }}>
-                        {work.date.slice(0, 10)}
-                      </p>
-                      <p style={{ fontSize: "18px", marginBottom: "8px" }}>
-                        {work.phone}
-                      </p>
+                      <div
+                        style={{
+                          marginTop: "25px",
+                          textAlign: "center",
+                        }}
+                      >
+                        <p style={{ fontSize: "18px", marginBottom: "8px" }}>
+                          {work.name}
+                        </p>
+                        <p style={{ fontSize: "18px", marginBottom: "8px" }}>
+                          {work.date.slice(0, 10)}
+                        </p>
+                        <p style={{ fontSize: "18px", marginBottom: "8px" }}>
+                          {work.phone}
+                        </p>
+                      </div>
                     </div>
                   </div>
-                </div>
+                  <Modal
+                    open={openFeedback}
+                    onClose={handleCloseFeedback}
+                    aria-labelledby="modal-modal-title"
+                    aria-describedby="modal-modal-description"
+                  >
+                    <Box
+                      sx={{
+                        position: "absolute",
+                        top: "50%",
+                        left: "50%",
+                        transform: "translate(-50%, -50%)",
+                        width: 400,
+                        bgcolor: "background.paper",
+                        border: "2px solid #000",
+                        boxShadow: 24,
+                        p: 4,
+                      }}
+                    >
+                      <textarea
+                        style={{
+                          width: "100%",
+                          height: "160px",
+                          border: "none",
+                          resize: "none",
+                          backgroundColor: "rgba(0, 0, 0, 0.06)",
+                        }}
+                      />
+                      <div
+                        style={{
+                          width: "100%",
+                          display: "flex",
+                          justifyContent: "center",
+                        }}
+                      >
+                        <Button
+                          variant="contained"
+                          sx={{ textAlign: "center" }}
+                        >
+                          Submit
+                        </Button>
+                      </div>
+                    </Box>
+                  </Modal>
+                </>
               );
             })}
           </div>

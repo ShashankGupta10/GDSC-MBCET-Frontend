@@ -12,25 +12,34 @@ import Search from "./components/HomepageProvider/Search";
 import Rewards from "./components/Rewards";
 import Bidresults from "./components/HomepageProvider/Bidresults";
 import ConsumerDashboard from "./components/HomepageProvider/ConsumerDashboard";
-import Ref from "./components/Ref"
+import Ref from "./components/Ref";
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/provider" element={<HomePage />} />
-        <Route path="/consumer" element={<ConsumerDashboard isConsumer= {true}/>} />
+        <Route
+          path="/consumer"
+          element={<ConsumerDashboard isConsumer={true} />}
+        />
         <Route path="/" element={<WelcomePage />} />
         <Route path="/signup/provider" element={<RegistrationProvider />} />
-        <Route path="/signup/consumer" element={<RegistrationConsumer isConsumer= {true}/>} />
+        <Route
+          path="/signup/consumer"
+          element={<RegistrationConsumer isConsumer={true} />}
+        />
         <Route path="/login/provider" element={<Login_Provider />} />
         <Route path="/login/consumer" element={<Login_Consumer />} />
         <Route path="provider/profile" element={<ProfileProvider />} />
-        <Route path="consumer/profile" element={<ProfileConsumer isConsumer= {true}/>} />
+        <Route
+          path="consumer/profile"
+          element={<ProfileConsumer isConsumer={true} />}
+        />
         <Route path="/provider/search" element={<Search />} />
-        <Route path="/redeem" element={<Rewards isConsumer= {true}/>} />
-        <Route path={`/bids/:id`} element={<Bidresults isConsumer= {true}/>} />
-        <Route path={`/ref`} element={<Ref isConsumer= {true}/>} />
+        <Route path="/redeem" element={<Rewards isConsumer={true} />} />
+        <Route path={`/bids/:id`} element={<Bidresults isConsumer={true} />} />
+        <Route path={`/ref`} element={<Ref isConsumer={true} />} />
       </Routes>
     </BrowserRouter>
   );
