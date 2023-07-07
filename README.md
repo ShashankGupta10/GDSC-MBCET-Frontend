@@ -48,7 +48,9 @@
 ## Technologies Used
 
 ```React``` For the Frontend of the application we used React js.
-```Node``` ```Express` For the implementation and the backend of the whole project we used Node.js and Express.js.
+
+```Node``` ```Express``` For the implementation and the backend of the whole project we used Node.js and Express.js.
+
 ```MongoDB``` For fetching and storing data of the whole project we used MongoDB for the use.
 
 ## About the Team
