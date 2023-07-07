@@ -1,4 +1,3 @@
 # GDSC MBCET Frontend Repository
 
-React hehe
-
+## HireBids
