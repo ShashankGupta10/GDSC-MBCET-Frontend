@@ -10,6 +10,7 @@ export default function Bidresults() {
   const [data, setData] = useState([]);
   const { id } = useParams();
 
+
   useEffect(() => {
     const token = localStorage.getItem("token");
     const headers = { authorization: `Bearer ${token}` };
@@ -26,7 +27,16 @@ export default function Bidresults() {
   }, []);
   const navigate = useNavigate();
   const handleClick = () => {
-    console.log("hello");
+    const token = localStorage.getItem("token");
+    const headers = { authorization: `Bearer ${token}` };
+    axios.patch(`http://localhost:3002/api/v1/acceptBid/${id}`, {headers})
+    .then((res)=>{
+      console.log(res.data)
+    })
+    .catch((err)=>{
+      console.log(err)
+    })
+    navigate("/consumer")
   };
 
   if (loading) {
@@ -68,7 +78,7 @@ export default function Bidresults() {
                     borderRadius: "10px",
                     boxShadow: "0 0 5px 0",
                   }}
-                  onClick={handleClick}
+                  
                 >
                   <div
                     style={{
@@ -137,6 +147,8 @@ export default function Bidresults() {
                             backgroundColor: "#006494",
                             textAlign: "center",
                           }}
+                          onClick={handleClick}
+                        
                         >
                           Accept
                         </Button>

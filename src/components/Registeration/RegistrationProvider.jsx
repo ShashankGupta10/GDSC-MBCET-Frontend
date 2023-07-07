@@ -28,7 +28,8 @@ export default function RegistrationProvider() {
     experience: "",
     profilePicture: "",
     username: "",
-    password: ""
+    password: "",
+    code: ""
   });
 
   const [showPassword, setShowPassword] = useState(false);
@@ -43,7 +44,17 @@ export default function RegistrationProvider() {
   };
 
   const handleSubmit = () => {
-    navigate("/")
+    const token = localStorage.getItem("token");
+    const headers = { authorization: `Bearer ${token}` };
+    axios.post("http://localhost:3002/api/v1/auth/provider/signup", formData, {headers})
+    .then((res)=>{
+      console.log(res.data)
+      navigate("/")
+    })
+    .catch((err)=>{
+      console.log(err)
+    })
+
   };
 
 
@@ -240,6 +251,13 @@ export default function RegistrationProvider() {
             type="number"
             value={formData.experience}
             onChange={(e) => handleChange(e, "experience")}
+          />
+          <TextField
+            id="outlined-number3"
+            label="Code"
+            type="number"
+            value={formData.code}
+            onChange={(e) => handleChange(e, "code")}
           />
           <div style={{
             gridColumn: 'span 2',

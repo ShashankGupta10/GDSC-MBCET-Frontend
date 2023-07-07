@@ -37,7 +37,7 @@ export default function Login_Consumer() {
     console.log(formData);
     // Make the POST request to the backend
     axios
-      .post("https://gdsc-mbcet-backend.onrender.com/api/v1/auth/consumer/login", formData)
+      .post("http://localhost:3002/api/v1/auth/consumer/login", formData)
       .then((response) => {
         if (response.status === 200) {
           console.log(response.data);

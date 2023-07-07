@@ -8,7 +8,6 @@ import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 
 const Bid = () => {
-    
   return (
     <>
       <div>
@@ -39,7 +38,7 @@ const Bid = () => {
           <Avatar
             sx={{ bgcolor: "red[500]", objectFit: "cover" }}
             aria-label="recipe"
-            src={"src\\assets\\pointsicon.png"} 
+            src={"src\\assets\\pointsicon.png"}
           />
         </div>
         <div style={{ flexDirection: "column" }}>

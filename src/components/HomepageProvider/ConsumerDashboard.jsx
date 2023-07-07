@@ -50,10 +50,9 @@ export default function ConsumerDashboard(props) {
         console.log(err);
       });
   };
-  
-  const handleOpenFeedback = ()=> setOpenFeedback(true)
-  const handleCloseFeedback = ()=> setOpenFeedback(false)
 
+  const handleOpenFeedback = () => setOpenFeedback(true);
+  const handleCloseFeedback = () => setOpenFeedback(false);
 
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
