@@ -50,9 +50,10 @@ export default function ConsumerDashboard(props) {
     const token = localStorage.getItem("token");
     const headers = { authorization: `Bearer ${token}` }; 
     const phone = 8657192360
-    axios.patch("http://localhost:3002/api/v1/feedback", {stars, phone, feedback }, {headers})
+    axios.patch("https://gdsc-mbcet-backend.onrender.com/api/v1/feedback", {stars, phone, feedback }, {headers})
     .then((res)=>{
       console.log(res.data)
+      navigate("/consumer")
     })
     .catch((err)=>{
       console.log(err)
@@ -63,7 +64,7 @@ export default function ConsumerDashboard(props) {
     const token = localStorage.getItem("token");
     const headers = { authorization: `Bearer ${token}` };
     axios
-      .post("http://localhost:3002/api/v1/raiseTicket/", formData, { headers })
+      .post("https://gdsc-mbcet-backend.onrender.com/api/v1/raiseTicket/", formData, { headers })
       .then((resp) => {
         console.log(resp.data);
       })
@@ -89,7 +90,7 @@ export default function ConsumerDashboard(props) {
     const headers = { Authorization: `Bearer ${token}` };
     axios
       .get(
-        "http://localhost:3002/api/v1/dashboard/consumer",
+        "https://gdsc-mbcet-backend.onrender.com/api/v1/dashboard/consumer",
         { headers }
       )
       .then((resp) => {

@@ -45,7 +45,7 @@ export default function RegistrationConsumer() {
     console.log(formData);
     // Make the POST request to the backend
     axios
-      .post("http://localhost:3002/api/v1/auth/consumer/signup", formData)
+      .post("https://gdsc-mbcet-backend.onrender.com/api/v1/auth/consumer/signup", formData)
       .then((response) => {
         // Handle the response from the backend
         console.log(response.data);

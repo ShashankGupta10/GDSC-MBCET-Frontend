@@ -10,7 +10,7 @@ function ProfileProvider() {
     const token = localStorage.getItem("token");
     const headers = { authorization: `Bearer ${token}` };
     axios
-      .get("http://localhost:3002/api/v1/provider/", {headers})
+      .get("https://gdsc-mbcet-backend.onrender.com/api/v1/provider/", {headers})
       .then((resp) => {
         console.log(resp.data);
         setData(resp.data)

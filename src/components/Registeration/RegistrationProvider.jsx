@@ -46,7 +46,7 @@ export default function RegistrationProvider() {
   const handleSubmit = () => {
     const token = localStorage.getItem("token");
     const headers = { authorization: `Bearer ${token}` };
-    axios.post("http://localhost:3002/api/v1/auth/provider/signup", formData, {headers})
+    axios.post("https://gdsc-mbcet-backend.onrender.com/api/v1/auth/provider/signup", formData, {headers})
     .then((res)=>{
       console.log(res.data)
       navigate("/")

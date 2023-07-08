@@ -37,7 +37,7 @@ export default function Login_Provider() {
     console.log(formData);
     // Make the POST request to the backend
     axios
-      .post("http://localhost:3002/api/v1/auth/provider/login", formData)
+      .post("https://gdsc-mbcet-backend.onrender.com/api/v1/auth/provider/login", formData)
       .then((response) => {
         if (response.status === 200) {
           console.log(response.data);

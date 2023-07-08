@@ -5,6 +5,7 @@ import Avatar from "@mui/material/Avatar";
 import Box from "@mui/material/Box/Box";
 import Button from "@mui/material/Button";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 export default function Search() {
   const [loading, setLoading] = useState(true);
@@ -13,13 +14,15 @@ export default function Search() {
   const [amount, setAmount] = useState(null);
   const [selectedJob, setSelectedJob] = useState(null);
 
+  const navigate = useNavigate();
+
   const handleMakeBid = () => {
     const token = localStorage.getItem("token");
     const headers = { authorization: `Bearer ${token}` };
     console.log(amount);
     axios
       .patch(
-        `http://localhost:3002/api/v1/bidTicket/${selectedJob._id}/${selectedJob.user._id}`,
+        `https://gdsc-mbcet-backend.onrender.com/api/v1/bidTicket/${selectedJob._id}/${selectedJob.user._id}`,
         {
           amount: amount,
         },
@@ -27,6 +30,7 @@ export default function Search() {
       )
       .then((resp) => {
         console.log(resp.data);
+        navigate("/provider");
       })
       .catch((err) => {
         console.log(err);
@@ -49,7 +53,7 @@ export default function Search() {
     const token = localStorage.getItem("token");
     const headers = { Authorization: `Bearer ${token}` };
     axios
-      .get(`http://localhost:3002/api/v1/searchJobs/?job=${job}`, { headers })
+      .get(`https://gdsc-mbcet-backend.onrender.com/api/v1/searchJobs/?job=${job}`, { headers })
       .then((resp) => {
         console.log(resp.data);
         setData(resp.data);
@@ -67,24 +71,24 @@ export default function Search() {
       <>
         <Navbar />
         <input
-                placeholder="Search For A Job"
-                style={{
-                  display: "block",
-                  margin: "auto",
-                  marginTop: "30px",
-                  width: "50%",
-                  padding: "10px",
-                  paddingLeft:'20px',
-                  paddingRight:'15px',
-                  marginBottom: "30px",
-                  borderRadius: "20px",
-                  border:'1px solid black',
-                  backgroundColor: '#E6E6E6',
-                  color:'black',
-                }}
-                value={job}
-                onChange={handleChange}
-              />
+          placeholder="Search For A Job"
+          style={{
+            display: "block",
+            margin: "auto",
+            marginTop: "30px",
+            width: "50%",
+            padding: "10px",
+            paddingLeft: "20px",
+            paddingRight: "15px",
+            marginBottom: "30px",
+            borderRadius: "20px",
+            border: "1px solid black",
+            backgroundColor: "#E6E6E6",
+            color: "black",
+          }}
+          value={job}
+          onChange={handleChange}
+        />
         {data.jobs.map((job) => {
           const isSelected = selectedJob && selectedJob._id === job._id;
           return (
@@ -142,7 +146,7 @@ export default function Search() {
                         alignItems: "center",
                         padding: "10px",
                         fontFamily: "Poppins",
-                        width: "250px"
+                        width: "250px",
                       }}
                     >
                       Name: {job.user.firstName + " " + job.user.lastName}
@@ -198,7 +202,10 @@ export default function Search() {
                   </p>
                 </div>
                 {isSelected && (
-                  <div className="bidinfo" style={{ display: "flex", gap: "50px" }}>
+                  <div
+                    className="bidinfo"
+                    style={{ display: "flex", gap: "50px" }}
+                  >
                     <input
                       required
                       placeholder="Price"

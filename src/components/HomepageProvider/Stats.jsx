@@ -29,7 +29,7 @@ export default function Stats() {
     const headers = { authorization: `Bearer ${token}` };
     console.log(headers);
     axios
-      .get("http://localhost:3002/api/v1/dashboard/provider", {
+      .get("https://gdsc-mbcet-backend.onrender.com/api/v1/dashboard/provider", {
         headers,
       })
       .then((response) => {
