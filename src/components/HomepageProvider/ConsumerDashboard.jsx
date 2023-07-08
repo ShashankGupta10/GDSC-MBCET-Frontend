@@ -3,6 +3,8 @@ import pth from "../../assets/profile.png";
 import one from "../../assets/customericon.png";
 import two from "../../assets/pointsicon.png";
 import three from "../../assets/staricon.png";
+import filled from "../../assets/starfilled.svg";
+import empty from "../../assets/starempty.svg";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import Navbar from "../Navbar/Navbar";
@@ -18,12 +20,14 @@ import Modal from "@mui/material/Modal";
 import { TextField } from "@mui/material";
 
 export default function ConsumerDashboard(props) {
+  const [stars, setStars] = useState(0);
   const navigate = useNavigate();
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [age, setAge] = useState("");
   const [open, setOpen] = useState(false);
   const [openFeedback, setOpenFeedback] = useState(false);
+  const [feedback, setFeedback] = useState("")
   const [formData, setFormData] = useState({
     workerType: "",
     date: "",
@@ -37,6 +41,23 @@ export default function ConsumerDashboard(props) {
       [field]: e.target.value,
     }));
   };
+
+  function handlestar(num) {
+    setStars(num);
+  }
+
+  const handleFeedback = ()=>{
+    const token = localStorage.getItem("token");
+    const headers = { authorization: `Bearer ${token}` }; 
+    const phone = 8657192360
+    axios.patch("http://localhost:3002/api/v1/feedback", {stars, phone, feedback }, {headers})
+    .then((res)=>{
+      console.log(res.data)
+    })
+    .catch((err)=>{
+      console.log(err)
+    })
+  }
 
   const handleSubmitForm = () => {
     const token = localStorage.getItem("token");
@@ -68,7 +89,7 @@ export default function ConsumerDashboard(props) {
     const headers = { Authorization: `Bearer ${token}` };
     axios
       .get(
-        "https://gdsc-mbcet-backend.onrender.com/api/v1/dashboard/consumer",
+        "http://localhost:3002/api/v1/dashboard/consumer",
         { headers }
       )
       .then((resp) => {
@@ -563,21 +584,101 @@ export default function ConsumerDashboard(props) {
                         top: "50%",
                         left: "50%",
                         transform: "translate(-50%, -50%)",
-                        width: 400,
+                        width: 500,
                         bgcolor: "background.paper",
-                        border: "2px solid #000",
                         boxShadow: 24,
                         p: 4,
+                        borderRadius: 5,
+                        outline: "none",
                       }}
                     >
+                      <p
+                        style={{
+                          fontSize: "20px",
+                          marginBottom: "10px",
+                        }}
+                      >
+                        Review
+                      </p>
+                      <input
+                        placeholder="Title"
+                        style={{
+                          width: "250px",
+                          height: "40px",
+                          backgroundColor: "#F0F0F0",
+                          border: "none",
+                          outline: "none",
+                          borderRadius: "5px",
+                          padding: "8px 10px",
+                          marginBottom: "10px",
+                          display: "inline-block",
+                        }}
+                      />
+                      <div
+                        style={{
+                          display: "inline-block",
+                          marginLeft: "30px",
+                        }}
+                      >
+                        <img
+                          style={{
+                            width: "20px",
+                            marginRight: "5px",
+                            cursor: "pointer",
+                          }}
+                          src={stars >= 1 ? filled : empty}
+                          onClick={() => handlestar(1)}
+                        />
+                        <img
+                          style={{
+                            width: "20px",
+                            marginRight: "5px",
+                            cursor: "pointer",
+                          }}
+                          src={stars >= 2 ? filled : empty}
+                          onClick={() => handlestar(2)}
+                        />
+                        <img
+                          style={{
+                            width: "20px",
+                            marginRight: "5px",
+                            cursor: "pointer",
+                          }}
+                          src={stars >= 3 ? filled : empty}
+                          onClick={() => handlestar(3)}
+                        />
+                        <img
+                          style={{
+                            width: "20px",
+                            marginRight: "5px",
+                            cursor: "pointer",
+                          }}
+                          src={stars >= 4 ? filled : empty}
+                          onClick={() => handlestar(4)}
+                        />
+                        <img
+                          style={{
+                            width: "20px",
+                            marginRight: "5px",
+                            cursor: "pointer",
+                          }}
+                          src={stars >= 5 ? filled : empty}
+                          onClick={() => handlestar(5)}
+                        />
+                      </div>
                       <textarea
+                        placeholder="Enter review text here"
                         style={{
                           width: "100%",
                           height: "160px",
                           border: "none",
                           resize: "none",
                           backgroundColor: "rgba(0, 0, 0, 0.06)",
+                          outline: "none",
+                          padding: "8px 10px",
                         }}
+                        value={feedback}
+                        onChange={(e)=> setFeedback(e.target.value)}
                       />
                       <div
                         style={{
@@ -589,6 +690,7 @@ export default function ConsumerDashboard(props) {
                         <Button
                           variant="contained"
                           sx={{ textAlign: "center" }}
+                          onClick={handleFeedback}
                         >
                           Submit
                         </Button>
