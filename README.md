@@ -17,6 +17,9 @@
 ## Overview of project
 - We have created a web app which eases the task of finding proper service at your footsteps with giving the consumers to choose the best and cost efficient services they need. The project project is made looking into account of both the consumers and retailers. A consumer can raise a service ticket of his/her choice and multiple retialers can bid for the same providing the consumer a variety of options to choose from which can be affected by the price bidded, the reviews they have and their past records. The consumer then has reward points for each service booked successfully hence getting attraction and providing trust, even a referral code can be issued and given to friends to gain reward points and stay connected.
 
+## WalkThrough of our project
+
+
 ## Features of project
 - **Signup/Login**
   
