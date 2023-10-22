@@ -20,6 +20,11 @@
 ## WalkThrough of our project
 
 
+
+https://github.com/ShashankGupta10/GDSC-MBCET-Frontend/assets/106877570/e1b3ae2d-3469-449c-8a64-a4fa37a6755e
+
+Heres the youtube link of the video -> https://www.youtube.com/watch?v=SSNQlcSPmu4
+
 ## Features of project
 - **Signup/Login**
   
